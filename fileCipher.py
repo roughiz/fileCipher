@@ -20,7 +20,7 @@ def file_decrypt(mykey,mytext,outputfile):
    encypted = data[DES3.block_size/2:len(data)-DES3.block_size]
      
    ctr = Counter.new(DES3.block_size*8/2, prefix=nonce)
-   cipher_decrypt = DES3.new(mykey, DES3.MODE_CTR, iv,counter=ctr)
+   cipher_decrypt = DES3.new(mykey, DES3.MODE_CTR,counter=ctr)
    decrypted_data = cipher_decrypt.decrypt(encypted)
    new_mac = HMAC.new(mykey, data, SHA)
    verified_mac = new_mac.digest() 
