@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import base64
 import argparse
 import os
